@@ -1,112 +1,123 @@
 html {
-    background: linear-gradient(#ac0e0e, #3d1313);
-    font-family: Calibri;
+  background-color: #472121;
+  font-family: Calibri;
 }
 
 body {
-    height: 100%;
-    margin: 10px;
+  height: 100%;
+  margin: 10px;
 }
 
 section {
-    display: grid;
-    height: calc(100vh - 20px);
-    grid-template-columns: 200px 1fr 200px;
-    grid-template-rows: 70px 1fr;
-    grid-template-areas: 
-      "header header header"
-      "navBar main userArea"
-      "footer footer footer";
-    grid-row-gap: 10px;
-    grid-column-gap: 10px;
+  display: grid;
+  height: calc(100vh - 20px);
+  width: calc(100vw - 20px);
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: 70px 1fr;
+  grid-template-areas:
+    "header header header"
+    "navBar main userArea"
+    "footer footer footer";
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
 }
 
 header {
-    grid-area: header;
-    background: aliceblue url('../images/heart.png') no-repeat 10px center/45px 45px;
-    border-radius: 5px;
+  grid-area: header;
+  background: url("../images/heart.png") no-repeat 10px center/45px 45px,
+    linear-gradient(#da5a5a, #802727);
 }
 
 header .websiteName {
-    font-size: 25px;
-    padding-left: 65px;
-    height: 70px;
-    line-height: 70px;
+  font-size: 25px;
+  padding-left: 65px;
+  height: 70px;
+  line-height: 70px;
 }
 
 nav.navBar {
-    grid-area: navBar;
-    background-color: aliceblue;
-    border-radius: 5px;
+  grid-area: navBar;
+  background-color: aliceblue;
 }
 
 nav.navBar ul {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 nav.navBar ul li {
-    display: block;
-    margin: 4px;
-    padding: 5px;
-    border-radius: 3px;
+  display: block;
+  margin: 4px;
+  padding: 5px;
+  border-radius: 3px;
 }
 
 nav.navBar ul li:hover {
-    background-color: #f5dcdc;
-    cursor: pointer;
+  background-color: #f5dcdc;
+  cursor: pointer;
 }
 
-.bar-title {
-    margin: 4px;
-    padding: 5px;
-    font-size: 16px;
-    background-color: #ac0e0e;
-    border-radius: 3px;
-    text-align: center;
+.block-title {
+  margin: 4px;
+  padding: 5px;
+  background-image: linear-gradient(#da5a5a, #802727);
+  color: #ffffff;
+  border: 1px solid #333333;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
 }
 
-aside.userArea {
-    grid-area: userArea;
-    background-color: aliceblue;
-    border-radius: 5px;
+.block-content {
+  margin: 4px;
+  border: 1px solid #333333;
+  border-radius: 5px;
+}
+
+.padding {
+  padding: 5px;
 }
 
 main {
-    grid-area: main;
-    background-color: aliceblue;
-    border-radius: 5px;
+  grid-area: main;
+  background-color: aliceblue;
+}
+
+aside.userArea {
+  grid-area: userArea;
+  background-color: aliceblue;
 }
 
 footer {
-    grid-area: footer;
-    background-color: aliceblue;
-    border-radius: 5px;
-    display: flex;
+  grid-area: footer;
+  background-color: aliceblue;
+  background-image: linear-gradient(#da5a5a, #802727);
+  display: flex;
 }
 
 footer .title {
-    flex: 1;
-    padding: 10px;
+  flex: 1;
+  padding: 10px;
 }
 
 footer .loadTime {
-    flex: 1;
-    text-align: right;
-    padding: 10px;
+  flex: 1;
+  text-align: right;
+  padding: 10px;
 }
 
 @media only screen and (max-width: 900px) {
-    section {
-        grid-template-columns: auto;
-        grid-template-rows: 70px 1fr 1fr 1fr auto;
-        grid-template-areas: 
-          "header"
-          "navBar"
-          "main"
-          "userArea"
-          "footer";
-        grid-row-gap: 10px;
-        grid-column-gap: 0;
-    }
+  section {
+    grid-template-columns: auto;
+    grid-template-rows: 70px 1fr 1fr 1fr auto;
+    grid-template-areas:
+      "header"
+      "navBar"
+      "main"
+      "userArea"
+      "footer";
+    grid-row-gap: 10px;
+    grid-column-gap: 0;
+  }
 }
