@@ -39,5 +39,5 @@
             </div>
         </div>
     </body>
-    <script type="text/javascript" src="./public/js/javascript.js"></script>
+    <script type="text/javascript" src="./public/js/main.js"></script>
 </html>
