@@ -1,69 +1,112 @@
 html {
-    background-color: brown;
-    margin: 0;
+    background: linear-gradient(#ac0e0e, #3d1313);
     font-family: Calibri;
 }
 
-.content {
-    margin: 30px auto;
-    width: 900px;
-    overflow: hidden;
+body {
+    height: 100%;
+    margin: 10px;
 }
 
-.content .top {
-    float: left;
-    width: 900px;
-    border-radius: 10px;
-    margin: 0 0 10px 0;
-    height: 70px;
-    background: aliceblue url('https://cdn.freebiesupply.com/images/large/2x/apple-logo-transparent.png') no-repeat 10px center/45px 45px;
+section {
+    display: grid;
+    height: calc(100vh - 20px);
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 70px 1fr;
+    grid-template-areas: 
+      "header header header"
+      "navBar main userArea"
+      "footer footer footer";
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
 }
 
-.content .top .name {
+header {
+    grid-area: header;
+    background: aliceblue url('../images/heart.png') no-repeat 10px center/45px 45px;
+    border-radius: 5px;
+}
+
+header .websiteName {
     font-size: 25px;
     padding-left: 65px;
     height: 70px;
     line-height: 70px;
 }
 
-.content .left {
+nav.navBar {
+    grid-area: navBar;
     background-color: aliceblue;
-    float: left;
-    width: 250px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
-.content .right {
-    background-color: aliceblue;
-    float: right;
-    width: 640px;
-    border-radius: 10px;
+nav.navBar ul {
+    margin: 0;
+    padding: 0;
 }
 
-.content .bottom {
-    background-color: aliceblue;
-    float: left;
-    width: 900px;
-    border-radius: 10px;
-    margin: 10px 0 0 0;
-    text-align: right;
-}
-
-.padding {
-    padding: 10px;
-}
-
-.content .left .menu div {
+nav.navBar ul li {
+    display: block;
+    margin: 4px;
     padding: 5px;
+    border-radius: 3px;
+}
+
+nav.navBar ul li:hover {
+    background-color: #f5dcdc;
     cursor: pointer;
 }
 
-.content .left .menu div:hover {
-    background-color: antiquewhite;
+.bar-title {
+    margin: 4px;
+    padding: 5px;
+    font-size: 16px;
+    background-color: #ac0e0e;
+    border-radius: 3px;
+    text-align: center;
 }
 
-.content-title {
-    text-align: center;
+aside.userArea {
+    grid-area: userArea;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+
+main {
+    grid-area: main;
+    background-color: aliceblue;
+    border-radius: 5px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: aliceblue;
+    border-radius: 5px;
+    display: flex;
+}
+
+footer .title {
+    flex: 1;
     padding: 10px;
-    border-bottom: 1px solid brown;
+}
+
+footer .loadTime {
+    flex: 1;
+    text-align: right;
+    padding: 10px;
+}
+
+@media only screen and (max-width: 900px) {
+    section {
+        grid-template-columns: auto;
+        grid-template-rows: 70px 1fr 1fr 1fr auto;
+        grid-template-areas: 
+          "header"
+          "navBar"
+          "main"
+          "userArea"
+          "footer";
+        grid-row-gap: 10px;
+        grid-column-gap: 0;
+    }
 }
